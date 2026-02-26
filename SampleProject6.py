@@ -24,11 +24,24 @@ while True:
         print("Contacts:")
         for name, phone, email in zip(names, phones, emails):
             count += 1
-            print(f"{count}. {name:10} {phone:2} \t {email}")
+            print(f"{count}. {name:10} {phone:5} \t {email}")
 
+    elif choice == "3":
+        search = input("Enter name to search: ")
+        found = False
+        for name, phone, email in zip(names, phones, emails):
+            if name == search:
+                print(f"Name: {name} \nPhone: {phone} \nEmail: {email}")
+                found = True
+                break
+            elif name != search:
+                print("No contacts yest!")
+            elif search.lower() or name.lower() != search.lower():
+                print("Name not matched!")
     elif choice == "4":
         print("Goodbye!")
         break
     else:
         print("Invalid Choice!")
 
+#print("\u2022 Bullet")
